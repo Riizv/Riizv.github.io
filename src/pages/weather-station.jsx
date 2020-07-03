@@ -5,7 +5,9 @@ import base from "../firebase/base";
 import { FaTemperatureHigh } from "react-icons/fa";
 import { FiCloudDrizzle } from "react-icons/fi";
 
-export default class WeatherStation extends React.Component {
+import FloatingBackButton from "../components/fab";
+
+class WeatherStation extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,7 +16,7 @@ export default class WeatherStation extends React.Component {
   }
 
   componentDidMount() {
-    base.fetch("weather-station", {
+    base.listenTo("weather-station", {
       context: this,
       then(data) {
         // console.log(data);
@@ -28,15 +30,19 @@ export default class WeatherStation extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>
-          <FaTemperatureHigh /> Temperature:{" "}
-          <b>{this.state.data.temperature}</b>
-        </p>
-        <p>
-          <FiCloudDrizzle /> Humidity: <b>{this.state.data.humidity}</b>
-        </p>
-      </div>
+      <>
+        <div>
+          <p>
+            <FaTemperatureHigh /> Temperature:{" "}
+            <b>{this.state.data.temperature}</b>
+          </p>
+          <p>
+            <FiCloudDrizzle /> Humidity: <b>{this.state.data.humidity}</b>
+          </p>
+        </div>
+        <FloatingBackButton />
+      </>
     );
   }
 }
+export default WeatherStation;
