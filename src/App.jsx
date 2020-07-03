@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 
 import AppBarTop from "./components/app-bar-top";
+// import LabelBottomNavigation from "./components/bottom-navigation";
 
 import Home from "./pages/home";
 import WeatherStation from "./pages/weather-station";
@@ -10,9 +11,8 @@ import WeatherStation from "./pages/weather-station";
 function App() {
   return (
     <Router>
+      <AppBarTop />
       <div>
-        <AppBarTop />
-
         <Switch>
           <Route path="/weather-station">
             <WeatherStation />
@@ -22,6 +22,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      {/* <LabelBottomNavigation /> */}
     </Router>
   );
 }

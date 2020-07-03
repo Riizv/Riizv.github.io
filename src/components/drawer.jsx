@@ -40,7 +40,7 @@ export default function DrawerComponent(props) {
   return (
     <>
       <SwipeableDrawer
-        anchor={"left"}
+        anchor={"right"}
         open={props.isOpen}
         onClose={props.toggleDrawer(false)}
         onOpen={props.toggleDrawer(true)}
