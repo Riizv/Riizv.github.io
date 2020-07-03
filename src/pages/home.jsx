@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -52,12 +52,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+  const history = useHistory();
 
-  const [redirect, setRedirect] = useState(false);
-
-  const handleOnClick = (_path) => {
-    setRedirect(true);
-    console.log(links[0].path);
+  const handleOnClick = (path) => {
+    history.push(path);
   };
 
   return (
@@ -87,11 +85,9 @@ const Home = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to={path}>
-                      <Button onClick={(path) => handleOnClick(path)}>
-                        More <PlayArrowTwoTone />
-                      </Button>
-                    </Link>
+                    <Button onClick={() => handleOnClick(path)}>
+                      More <PlayArrowTwoTone />
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>

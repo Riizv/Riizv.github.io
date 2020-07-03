@@ -4,6 +4,7 @@ import base from "../firebase/base";
 
 import { FaTemperatureHigh } from "react-icons/fa";
 import { FiCloudDrizzle } from "react-icons/fi";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import FloatingBackButton from "../components/fab";
 
@@ -12,34 +13,43 @@ class WeatherStation extends React.Component {
     super();
     this.state = {
       data: "",
+      isLoading: true,
     };
   }
 
   componentDidMount() {
-    base.listenTo("weather-station", {
+    this.ref = base.listenTo("weather-station", {
       context: this,
       then(data) {
         // console.log(data);
         this.setState({
           data,
+          isLoading: false,
         });
       },
     });
-    // console.log("DATA", this.state.data);
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   render() {
     return (
       <>
-        <div>
-          <p>
-            <FaTemperatureHigh /> Temperature:{" "}
-            <b>{this.state.data.temperature}</b>
-          </p>
-          <p>
-            <FiCloudDrizzle /> Humidity: <b>{this.state.data.humidity}</b>
-          </p>
-        </div>
+        {this.state.isLoading ? (
+          <CircularProgress />
+        ) : (
+          <div>
+            <p>
+              <FaTemperatureHigh /> Temperature:{" "}
+              <b>{this.state.data.temperature}</b>
+            </p>
+            <p>
+              <FiCloudDrizzle /> Humidity: <b>{this.state.data.humidity}</b>
+            </p>
+          </div>
+        )}
         <FloatingBackButton />
       </>
     );
