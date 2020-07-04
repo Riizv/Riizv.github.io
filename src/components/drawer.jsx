@@ -21,6 +21,11 @@ export default function DrawerComponent(props) {
           path: "/weather-station",
           icon: <MailIconTwoTone />,
         },
+        {
+          name: "Position",
+          path: "/position",
+          icon: <MailIconTwoTone />,
+        },
       ].map(({ name, path, icon }) => (
         <ListItem
           button
@@ -40,7 +45,7 @@ export default function DrawerComponent(props) {
   return (
     <>
       <SwipeableDrawer
-        anchor={"right"}
+        anchor={"bottom"}
         open={props.isOpen}
         onClose={props.toggleDrawer(false)}
         onOpen={props.toggleDrawer(true)}
