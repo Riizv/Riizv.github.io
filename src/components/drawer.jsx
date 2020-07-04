@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import {
@@ -10,23 +11,13 @@ import {
 } from "@material-ui/core";
 import MailIconTwoTone from "@material-ui/icons/MailTwoTone";
 
+import { pages } from "../config/pages.jsx";
 export default function DrawerComponent(props) {
   const history = useHistory();
 
   const list = () => (
     <List>
-      {[
-        {
-          name: "Weather Station",
-          path: "/weather-station",
-          icon: <MailIconTwoTone />,
-        },
-        {
-          name: "Position",
-          path: "/position",
-          icon: <MailIconTwoTone />,
-        },
-      ].map(({ name, path, icon }) => (
+      {pages.map(({ name, path, icon }) => (
         <ListItem
           button
           key={path}
@@ -55,3 +46,8 @@ export default function DrawerComponent(props) {
     </>
   );
 }
+
+DrawerComponent.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggleDrawer: PropTypes.func.isRequired,
+};

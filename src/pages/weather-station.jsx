@@ -9,29 +9,28 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { Divider } from "@material-ui/core";
-
-import { FaTemperatureHigh } from "react-icons/fa";
-import { FiCloudDrizzle } from "react-icons/fi";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import OpacityTwoToneIcon from "@material-ui/icons/OpacityTwoTone";
+import LinearProgress from "@material-ui/core/LinearProgress";
+import { FaTemperatureHigh } from "react-icons/fa";
+
+import Chart from "../components/chart";
 
 const styles = {
-  root: {
-    flexGrow: 1,
-    marginTop: 5,
-  },
+  root: {},
   progress: {
     position: "absolute",
     top: "49%",
     left: "49%",
   },
-  card: {
-    minWidth: 275,
-  },
+  card: {},
   title: {
     fontSize: 14,
   },
-  pos: {
-    textAlign: "center",
+  pos: {},
+  cardHeight: {
+    height: 120,
+    paddingBottom: 60,
   },
 };
 class WeatherStation extends React.Component {
@@ -68,42 +67,35 @@ class WeatherStation extends React.Component {
         ) : (
           <Container maxWidth="md">
             <Grid container className={classes.root} spacing={3}>
-              <Grid item xs={12}>
-                <Grid container justify="center" spacing={3}>
-                  <Grid item>
-                    <Card className={classes.root}>
-                      <CardContent>
-                        <Typography variant="h5" component="h2">
-                          <FaTemperatureHigh /> Temperature
-                        </Typography>
-                      </CardContent>
-                      <Divider />
-                      <Typography
-                        className={classes.pos}
-                        variant="h2"
-                        component="h2"
-                      >
-                        {this.state.data.temperature}
-                      </Typography>
-                    </Card>
-
-                    <Card className={classes.root}>
-                      <CardContent>
-                        <Typography variant="h5" component="h2">
-                          <FaTemperatureHigh /> Humidity
-                        </Typography>
-                      </CardContent>
-                      <Divider />
-                      <Typography
-                        className={classes.pos}
-                        variant="h2"
-                        component="h2"
-                      >
-                        {this.state.data.humidity}
-                      </Typography>
-                    </Card>
-                  </Grid>
-                </Grid>
+              <Grid item xs={12} sm={6}>
+                <Card className={classes.root}>
+                  <CardContent className={classes.cardHeight}>
+                    <Typography variant="h5" component="h2">
+                      <FaTemperatureHigh /> Temperature{" "}
+                      {this.state.data.temperature}
+                    </Typography>
+                      <Chart value={this.state.data.temperature} />
+                  </CardContent>
+                  <LinearProgress
+                    variant="determinate"
+                    value={this.state.data.temperature}
+                  />
+                </Card>
+              </Grid>
+              {/*  */}
+              <Grid item xs={12} sm={6}>
+                <Card className={classes.root}>
+                  <CardContent className={classes.cardHeight}>
+                    <Typography variant="h5" component="h2">
+                      <OpacityTwoToneIcon /> Humidity {this.state.data.humidity}
+                    </Typography>
+                    <Chart value={this.state.data.temperature} />
+                  </CardContent>
+                  <LinearProgress
+                    variant="determinate"
+                    value={this.state.data.humidity}
+                  />
+                </Card>
               </Grid>
             </Grid>
           </Container>
