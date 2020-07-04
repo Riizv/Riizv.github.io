@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import { Divider } from "@material-ui/core";
 
 import CloudTwoTone from "@material-ui/icons/CloudTwoTone";
 import PlayArrowTwoTone from "@material-ui/icons/PlayArrowTwoTone";
@@ -60,6 +61,8 @@ const Home = () => {
 
   return (
     <Container maxWidth="md">
+      <h1>ExLog</h1>
+      <Divider />
       <Grid container className={classes.root} spacing={3}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={3}>

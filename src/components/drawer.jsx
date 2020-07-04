@@ -1,24 +1,37 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import {
   List,
-  Divider,
+  // Divider,
   ListItem,
   ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import InboxIconTwoTone from "@material-ui/icons/InboxTwoTone";
 import MailIconTwoTone from "@material-ui/icons/MailTwoTone";
 
 export default function DrawerComponent(props) {
+  const history = useHistory();
+
   const list = () => (
     <List>
-      {[{name: "Weather Station", path: "/weather-station"}].map((text, index) => (
-        <ListItem button key={text}>
-          <ListItemIcon>
-            {index % 2 === 0 ? <InboxIconTwoTone /> : <MailIconTwoTone />}
-          </ListItemIcon>
-          <ListItemText primary={text} />
+      {[
+        {
+          name: "Weather Station",
+          path: "/weather-station",
+          icon: <MailIconTwoTone />,
+        },
+      ].map(({ name, path, icon }) => (
+        <ListItem
+          button
+          key={path}
+          onClick={() => {
+            history.push(path);
+            props.toggleDrawer(false);
+          }}
+        >
+          <ListItemIcon>{icon}</ListItemIcon>
+          <ListItemText primary={name} />
         </ListItem>
       ))}
     </List>
