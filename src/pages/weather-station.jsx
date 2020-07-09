@@ -39,6 +39,17 @@ class WeatherStation extends React.Component {
     this.state = {
       data: "",
       isLoading: true,
+      memory: [
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+        this.createData(0, 0),
+      ],
     };
   }
 
@@ -50,6 +61,7 @@ class WeatherStation extends React.Component {
           data,
           isLoading: false,
         });
+        this.updateHistory(data.temperature);
       },
     });
   }
@@ -57,6 +69,19 @@ class WeatherStation extends React.Component {
   componentWillUnmount() {
     base.removeBinding(this.ref);
   }
+
+  createData = (time, el) => ({ time, el });
+
+  updateHistory = (newElement) => {
+    const moment = `${new Date().getMinutes()}:${new Date().getSeconds()}`;
+    this.setState({
+      memory: [
+        ...this.state.memory.slice(1, 9),
+        this.createData(moment, newElement),
+      ],
+    });
+    console.log("LOOK");
+  };
 
   render() {
     const { classes } = this.props;
@@ -74,7 +99,7 @@ class WeatherStation extends React.Component {
                       <FaTemperatureHigh /> Temperature{" "}
                       {this.state.data.temperature}
                     </Typography>
-                      <Chart value={this.state.data.temperature} />
+                    <Chart value={this.state.data.temperature} memory={this.state.memory} />
                   </CardContent>
                   <LinearProgress
                     variant="determinate"
@@ -89,7 +114,7 @@ class WeatherStation extends React.Component {
                     <Typography variant="h5" component="h2">
                       <OpacityTwoToneIcon /> Humidity {this.state.data.humidity}
                     </Typography>
-                    <Chart value={this.state.data.temperature} />
+                    <Chart value={this.state.data.humidity} />
                   </CardContent>
                   <LinearProgress
                     variant="determinate"

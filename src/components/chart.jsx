@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 
 import {
@@ -16,39 +16,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createData = (time, el) => ({ time, el });
-
-const data = [
-  createData("00:00", 0),
-  createData("03:00", 0),
-  createData("06:00", 0),
-  createData("09:00", 0),
-  createData("12:00", 0),
-  createData("15:00", 0),
-  createData("18:00", 0),
-  createData("21:00", 0),
-  createData("24:00", 0),
-];
-
-const Chart = ({ value }) => {
+const Chart = ({ value, memory }) => {
   const theme = useTheme();
   const classes = useStyles();
 
-  const updateHistory = (newElement) => {
-    data.shift();
-    data.push(createData(new Date().getSeconds(), newElement));
-  };
-
-  useEffect(() => {
-    updateHistory(value);
-    return () => {
-      updateHistory(value);
-    };
-  });
+  // useEffect(() => {
+  // });
 
   return (
     <ResponsiveContainer>
-      <LineChart data={data} className={classes.root}>
+      <LineChart data={memory} className={classes.root}>
         <XAxis dataKey="time" />
         <YAxis stroke={theme.palette.text.secondary}></YAxis>
         <Line type="monotone" dataKey="el" />
@@ -57,4 +34,4 @@ const Chart = ({ value }) => {
   );
 };
 
-export default Chart;
+export default memo(Chart);
