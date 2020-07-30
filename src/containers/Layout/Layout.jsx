@@ -7,6 +7,7 @@ const WrapperLayout = styled.div`
   display: flex;
   max-width: 1000px;
   margin: auto;
+  margin-bottom: 5rem;
 `;
 
 const MainWrapper = styled.main`
