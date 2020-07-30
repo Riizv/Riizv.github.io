@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigation } from '../../components';
 import styled from 'styled-components';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 const WrapperLayout = styled.div`
   display: flex;
@@ -17,10 +17,10 @@ const MainWrapper = styled.main`
 const Layout = ({ children }) => {
   return (
     <WrapperLayout>
-      <BrowserRouter>
+      <HashRouter>
         <MainWrapper>{children}</MainWrapper>
         <Navigation />
-      </BrowserRouter>
+      </HashRouter>
     </WrapperLayout>
   );
 };
