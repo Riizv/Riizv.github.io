@@ -1,22 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.a689ad72.chunk.css",
-    "main.js": "/static/js/main.6070ade7.chunk.js",
-    "main.js.map": "/static/js/main.6070ade7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.96d94033.js",
-    "runtime-main.js.map": "/static/js/runtime-main.96d94033.js.map",
-    "static/js/2.ae7bb6a8.chunk.js": "/static/js/2.ae7bb6a8.chunk.js",
-    "static/js/2.ae7bb6a8.chunk.js.map": "/static/js/2.ae7bb6a8.chunk.js.map",
+    "main.css": "/static/css/main.99ba057b.chunk.css",
+    "main.js": "/static/js/main.8c8696aa.chunk.js",
+    "main.js.map": "/static/js/main.8c8696aa.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bfe8f3ab.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bfe8f3ab.js.map",
+    "static/css/2.6f554c19.chunk.css": "/static/css/2.6f554c19.chunk.css",
+    "static/js/2.b9bbf67d.chunk.js": "/static/js/2.b9bbf67d.chunk.js",
+    "static/js/2.b9bbf67d.chunk.js.map": "/static/js/2.b9bbf67d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0379c8e33463a26d74a356aa92fa899d.js": "/precache-manifest.0379c8e33463a26d74a356aa92fa899d.js",
+    "precache-manifest.dce08295d06e188e858fd1f07158287f.js": "/precache-manifest.dce08295d06e188e858fd1f07158287f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.a689ad72.chunk.css.map": "/static/css/main.a689ad72.chunk.css.map",
-    "static/js/2.ae7bb6a8.chunk.js.LICENSE.txt": "/static/js/2.ae7bb6a8.chunk.js.LICENSE.txt"
+    "static/css/2.6f554c19.chunk.css.map": "/static/css/2.6f554c19.chunk.css.map",
+    "static/css/main.99ba057b.chunk.css.map": "/static/css/main.99ba057b.chunk.css.map",
+    "static/js/2.b9bbf67d.chunk.js.LICENSE.txt": "/static/js/2.b9bbf67d.chunk.js.LICENSE.txt",
+    "static/media/home_cinema.svg": "/static/media/home_cinema.afe57b51.svg",
+    "static/media/index.css": "/static/media/montserrat-latin-900italic.a8ec4957.woff",
+    "static/media/operating_system.svg": "/static/media/operating_system.1ffb2d13.svg",
+    "static/media/towing.svg": "/static/media/towing.1eec8c1f.svg",
+    "static/media/weather_notification.svg": "/static/media/weather_notification.84f39abf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.96d94033.js",
-    "static/js/2.ae7bb6a8.chunk.js",
-    "static/css/main.a689ad72.chunk.css",
-    "static/js/main.6070ade7.chunk.js"
+    "static/js/runtime-main.bfe8f3ab.js",
+    "static/css/2.6f554c19.chunk.css",
+    "static/js/2.b9bbf67d.chunk.js",
+    "static/css/main.99ba057b.chunk.css",
+    "static/js/main.8c8696aa.chunk.js"
   ]
 }
