@@ -1,24 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'typeface-montserrat';
 
-import "./index.scss";
-import App from "./App.jsx";
-import * as serviceWorker from "./serviceWorker";
-
-import Arduino from "./reducers/arduino";
-let store = createStore(Arduino);
-console.log("Store", store.getState());
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <React.StrictMode>
     <App />
-  </Provider>,
-  document.getElementById("root")
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+serviceWorker.unregister();

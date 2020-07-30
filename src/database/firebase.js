@@ -1,5 +1,4 @@
 import firebase from "firebase";
-import Rebase from "re-base";
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyB8Zb2nxAQ9hZjDlYggpYVK7VRY8Nlz1jc",
@@ -12,7 +11,6 @@ const firebaseApp = firebase.initializeApp({
   measurementId: "G-C8YXZMZKKY",
 });
 
-const db = firebaseApp.database();
-const base = Rebase.createClass(db);
+const base = firebaseApp.database();
 
 export default base;

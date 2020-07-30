@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React from 'react';
+// import styled from 'styled-components';
 
-const settings = []
+import { Img, Logo } from '../components';
 
-const SettingsPage = () => {
+import operating_system from '../assets/operating_system.svg';
 
+const Settings = () => {
   return (
-    <div>Settings</div>
+    <div>
+      <Logo>Settings</Logo>
+      <Img src={operating_system} padding={30} maxHeight={300} />
+    </div>
   );
 };
 
-export default SettingsPage;
+export default Settings;
