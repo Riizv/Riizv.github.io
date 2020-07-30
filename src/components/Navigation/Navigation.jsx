@@ -7,7 +7,7 @@ import { useDrag } from 'react-use-gesture';
 
 import { IconContext } from 'react-icons';
 import { FaHome, FaCloudMoonRain } from 'react-icons/fa';
-import { IoMdSettings } from 'react-icons/io';
+import { IoMdSettings, IoMdMenu } from 'react-icons/io';
 
 const Link = styled(NavLink)`
   flex: 1;
@@ -69,6 +69,7 @@ const Navigation = () => {
       setHeight({ width: 0 });
       setIsOpen({ ...isOpen, width: false });
     }
+    // console.log(isOpen, swipeX, swipeY);
   });
 
   const toPixel = windowInner => value => {
@@ -90,15 +91,22 @@ const Navigation = () => {
       }}
     >
       <IconContext.Provider value={{ color: 'blue', size: '2.3rem' }}>
-        <NavigationLink to="/" name="Home">
-          <FaHome />
-        </NavigationLink>
-        <NavigationLink to="/weather-station" name="Weather Station">
-          <FaCloudMoonRain />
-        </NavigationLink>
-        <NavigationLink to="/settings" name="Settings">
-          <IoMdSettings />
-        </NavigationLink>
+        {!isOpen.width && !isOpen.height && (
+          <IoMdMenu style={{ marginTop: `0.8rem` }} />
+        )}
+        {isOpen.width && !isOpen.height && (
+          <>
+            <NavigationLink to="/" name="Home">
+              <FaHome />
+            </NavigationLink>
+            <NavigationLink to="/weather-station" name="Weather Station">
+              <FaCloudMoonRain />
+            </NavigationLink>
+            <NavigationLink to="/settings" name="Settings">
+              <IoMdSettings />
+            </NavigationLink>
+          </>
+        )}
       </IconContext.Provider>
     </AnimatedNav>
   );
