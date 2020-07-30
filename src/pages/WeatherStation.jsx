@@ -4,9 +4,20 @@ import { MdError } from 'react-icons/md';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import styled, { keyframes } from 'styled-components';
 
+import { IoIosWater } from 'react-icons/io';
+import { RiTempColdLine } from 'react-icons/ri';
+
 import base from '../database/firebase';
 
-import { Img, Logo } from '../components';
+import {
+  Img,
+  Logo,
+  Card,
+  CardTitle,
+  CardContent,
+  Progress,
+} from '../components';
+import { Grid } from '../containers';
 import weather_notification from '../assets/weather_notification.svg';
 
 const rotate = keyframes`
@@ -40,13 +51,27 @@ const WeatherStation = () => {
           </strong>
         )}
         {loading && <AnimationAiOutlineLoading3Quarters />}
-        {value && (
-        <span>
-          Humidity: {value.val().humidity}
-          Temperature: {value.val().temperature}
-          </span>
-          )}
       </p>
+      {value && (
+        <Grid>
+          <Card>
+            <CardTitle>
+              <RiTempColdLine /> Temperature
+            </CardTitle>
+            <CardContent>
+              <Progress value={value.val().temperature} />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardTitle>
+              <IoIosWater /> Humidity
+            </CardTitle>
+            <CardContent>
+              <Progress value={value.val().humidity} />
+            </CardContent>
+          </Card>
+        </Grid>
+      )}
     </div>
   );
 };
