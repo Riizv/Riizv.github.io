@@ -8,6 +8,7 @@ const WrapperLayout = styled.div`
   max-width: 1000px;
   margin: auto;
   margin-bottom: 5rem;
+  /* opacity: 0; */
 `;
 
 const MainWrapper = styled.main`

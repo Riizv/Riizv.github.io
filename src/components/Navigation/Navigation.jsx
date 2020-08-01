@@ -46,7 +46,7 @@ const AnimatedNav = animated(Nav);
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState({ width: true, height: false });
 
-  const [{ height, width }, setHeight] = useSpring(() => ({
+  const [{ height, width }, setSize] = useSpring(() => ({
     height: 0,
     width: 100,
     config: { mass: 1, tension: 300, friction: 25 },
@@ -54,19 +54,19 @@ const Navigation = () => {
 
   const bind = useDrag(({ swipe: [swipeX, swipeY] }) => {
     if (swipeY === -1) {
-      setHeight({ height: 100 });
+      setSize({ height: 100 });
       setIsOpen({ ...isOpen, height: true });
     }
     if (swipeY === 1) {
-      setHeight({ height: 0 });
+      setSize({ height: 0 });
       setIsOpen({ ...isOpen, height: false });
     }
     if (swipeX === -1) {
-      setHeight({ width: 100 });
+      setSize({ width: 100 });
       setIsOpen({ ...isOpen, width: true });
     }
     if (swipeX === 1) {
-      setHeight({ width: 0 });
+      setSize({ width: 0 });
       setIsOpen({ ...isOpen, width: false });
     }
     // console.log(isOpen, swipeX, swipeY);
@@ -79,8 +79,8 @@ const Navigation = () => {
     return `${((windowInner - MARGIN) * value) / REM + 4}rem`;
   };
 
-  const vwToPixel = toPixel(window.innerWidth);
-  const vhToPixel = toPixel(window.innerHeight);
+  const vwToPixel = toPixel(window.innerWidth),
+    vhToPixel = toPixel(window.innerHeight);
 
   return (
     <AnimatedNav
@@ -92,7 +92,13 @@ const Navigation = () => {
     >
       <IconContext.Provider value={{ color: 'blue', size: '2.3rem' }}>
         {!isOpen.width && !isOpen.height && (
-          <IoMdMenu style={{ marginTop: `0.8rem` }} />
+          <IoMdMenu
+            style={{ marginTop: `0.8rem` }}
+            onClick={() => {
+              setSize({ height: 100, width: 100 });
+              setIsOpen({ height: true, width: true });
+            }}
+          />
         )}
         {isOpen.width && !isOpen.height && (
           <>

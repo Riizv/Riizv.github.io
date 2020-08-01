@@ -1,21 +1,27 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import './App.css';
 
 import { Layout } from './containers';
 import Router from './router/Router';
 
-import theme from './theme/theme';
+import { lightTheme, darkTheme } from './theme/theme';
+
+import { store } from './store/themeSlice';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Layout>
-      <Router />
-    </Layout>
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyle />
+      <Layout>
+        <Router />
+      </Layout>
+    </ThemeProvider>
+  </Provider>
 );
 
 export default App;
