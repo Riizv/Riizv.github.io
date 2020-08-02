@@ -8,14 +8,14 @@ import './App.css';
 import { Layout } from './containers';
 import Router from './router/Router';
 
-import { lightTheme, darkTheme } from './theme/theme';
+import { themes } from './themes/themes';
 import { selectTheme } from './store/themeSlice';
 
 const App = () => {
   const theme = useSelector(selectTheme);
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
       <Layout>
         <Router />
