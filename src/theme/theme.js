@@ -1,8 +1,8 @@
 export const lightTheme = {
-  main: '#ffffff',
-  white: '#E5E1DD',
-  second: '#363363',
-  dark: '#1A1E22',
+  main: '#374358',
+  white: '#FEFCFF',
+  second: '#5A6AFC',
+  dark: '#F2F2F8',
 };
 
 export const darkTheme = {
