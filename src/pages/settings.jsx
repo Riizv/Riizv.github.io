@@ -2,7 +2,8 @@ import React from 'react';
 import { connect, useSelector } from 'react-redux';
 // import styled from 'styled-components';
 
-import { Img, Logo } from '../components';
+import { Img, Logo, Card, CardTitle, CardContent } from '../components';
+import { Grid } from '../containers';
 
 import operating_system from '../assets/operating_system.svg';
 
@@ -22,8 +23,18 @@ const Settings = ({ switchTheme }) => {
     <div>
       <Logo>Settings</Logo>
       <Img src={operating_system} padding={30} maxHeight={300} />
-      <h1>{theme}</h1>
-      <button onClick={switcher}>Switch theme</button>
+      <Grid>
+        <Card>
+          <CardTitle>Theme: {theme}</CardTitle>
+          <CardContent>
+            <button onClick={switcher}>Switch theme</button>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardTitle>Version</CardTitle>
+          <CardContent>v0.3 Beta</CardContent>
+        </Card>
+      </Grid>
     </div>
   );
 };

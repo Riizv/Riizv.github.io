@@ -18,5 +18,5 @@ export const { switchTheme } = actions;
 export const selectTheme = state => state.theme.value;
 
 export const store = configureStore({
-  reducer: { theme: themeSlice.reducer },
+  reducer: { theme: themeSlice.reducer }
 });
