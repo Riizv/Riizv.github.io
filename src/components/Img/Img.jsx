@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Image = styled.img`
-  /* height: 10rem; */
   width: 100%;
-  border-radius: 1rem;
-  background: ${({ theme }) => theme.main};
+  border-radius: ${({ theme }) => theme.borderRadius}rem;
+  background: ${({ theme }) => theme.card.backgroundColor};
   box-sizing: border-box;
 `;
 

@@ -5,16 +5,17 @@ import { useSpring, animated } from 'react-spring';
 const Wrapper = styled.div`
   width: 100%;
   height: 3rem;
-  border-radius: 1rem;
+  border-radius: ${({ theme }) => theme.borderRadius / 1.5}rem;
   overflow: hidden;
-  background: #43a04730;
+  background: ${({ theme }) => theme.accent.green}30;
 `;
 const Status = styled.div`
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  background: #43a047;
+  background: ${({ theme }) => theme.accent.green};
   font-weight: bold;
+  box-shadow: ${({ theme }) => theme.card.shadow};
 `;
 
 const AnimatedStatus = animated(Status);

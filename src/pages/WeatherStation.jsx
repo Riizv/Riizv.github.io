@@ -13,6 +13,8 @@ import {
   Img,
   Logo,
   Card,
+  CardHeader,
+  CardIcon,
   CardTitle,
   CardContent,
   Progress,
@@ -55,17 +57,23 @@ const WeatherStation = () => {
       {value && (
         <Grid>
           <Card>
-            <CardTitle>
-              <RiTempColdLine /> Temperature
-            </CardTitle>
+            <CardHeader>
+              <CardIcon>
+                <RiTempColdLine />
+              </CardIcon>
+              <CardTitle>Temperature</CardTitle>
+            </CardHeader>
             <CardContent>
               <Progress value={value.val().temperature} />
             </CardContent>
           </Card>
           <Card>
-            <CardTitle>
-              <IoIosWater /> Humidity
-            </CardTitle>
+            <CardHeader>
+              <CardIcon>
+                <IoIosWater />
+              </CardIcon>
+              <CardTitle>Humidity</CardTitle>
+            </CardHeader>
             <CardContent>
               <Progress value={value.val().humidity} />
             </CardContent>

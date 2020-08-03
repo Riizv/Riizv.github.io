@@ -26,19 +26,19 @@ const Nav = styled.nav`
   justify-content: space-around;
   width: calc(100% - 2rem);
   height: 65px;
-  background: ${({ theme }) => theme.second};
+  background: ${({ theme }) => theme.nav.background};
   & * {
     text-decoration: none;
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.nav.fontColor};
   }
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 1rem;
-  border-radius: 1rem;
+  border-radius: ${({ theme }) => theme.borderRadius}rem;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 0.4rem 3rem -1.5rem black;
+  box-shadow: ${({ theme }) => theme.nav.shadow};
 `;
 
 const AnimatedNav = animated(Nav);

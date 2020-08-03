@@ -28,6 +28,7 @@ export default App;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${({ theme }) => theme.dark};
+    background-color: ${({ theme }) => theme.backgroundColor};
+    color: ${({ theme }) => theme.fontColor};
   }
 `;

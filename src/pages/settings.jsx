@@ -2,7 +2,18 @@ import React from 'react';
 import { connect, useSelector } from 'react-redux';
 // import styled from 'styled-components';
 
-import { Img, Logo, Card, CardTitle, CardContent, Select } from '../components';
+import { MdUpdate, MdBrightnessMedium } from 'react-icons/md';
+
+import {
+  Img,
+  Logo,
+  Card,
+  CardHeader,
+  CardIcon,
+  CardTitle,
+  CardContent,
+  Select,
+} from '../components';
 import { Grid } from '../containers';
 
 import operating_system from '../assets/operating_system.svg';
@@ -24,12 +35,17 @@ const Settings = ({ switchTheme }) => {
       <Img src={operating_system} padding={30} maxHeight={300} />
       <Grid>
         <Card>
-          <CardTitle>Theme</CardTitle>
+          <CardHeader>
+            <CardIcon>
+              <MdBrightnessMedium />
+            </CardIcon>
+            <CardTitle>Theme</CardTitle>
+          </CardHeader>
           <CardContent>
             {/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_optgroup */}
-            <Select name="theme" onChange={switcher}>
+            <Select name="theme" onChange={switcher} value={theme}>
               {['light', 'dark', 'pink', 'yellow'].map(el => (
-                <option key={el} value={el} selected={el === theme}>
+                <option key={el} value={el}>
                   {el}
                 </option>
               ))}
@@ -37,7 +53,12 @@ const Settings = ({ switchTheme }) => {
           </CardContent>
         </Card>
         <Card>
-          <CardTitle>Version</CardTitle>
+          <CardHeader>
+            <CardIcon>
+              <MdUpdate />
+            </CardIcon>
+            <CardTitle>Version</CardTitle>
+          </CardHeader>
           <CardContent>v0.3 Beta</CardContent>
         </Card>
       </Grid>

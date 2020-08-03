@@ -2,7 +2,7 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const themeSlice = createSlice({
   name: 'theme',
-  initialState: { value: 'dark' },
+  initialState: { value: 'light' },
   reducers: {
     switchTheme: (state, action) => {
       state.value = action.payload;
