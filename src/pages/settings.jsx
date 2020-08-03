@@ -2,7 +2,7 @@ import React from 'react';
 import { connect, useSelector } from 'react-redux';
 // import styled from 'styled-components';
 
-import { Img, Logo, Card, CardTitle, CardContent } from '../components';
+import { Img, Logo, Card, CardTitle, CardContent, Select } from '../components';
 import { Grid } from '../containers';
 
 import operating_system from '../assets/operating_system.svg';
@@ -10,13 +10,12 @@ import operating_system from '../assets/operating_system.svg';
 import { selectTheme, switchTheme } from '../store/themeSlice';
 
 const mapDispatch = { switchTheme };
-const mapState = state => state;
 
 const Settings = ({ switchTheme }) => {
   const theme = useSelector(selectTheme);
 
-  const switcher = () => {
-    theme === 'light' ? switchTheme('dark') : switchTheme('light');
+  const switcher = ({ target }) => {
+    switchTheme(target.value);
   };
 
   return (
@@ -25,9 +24,16 @@ const Settings = ({ switchTheme }) => {
       <Img src={operating_system} padding={30} maxHeight={300} />
       <Grid>
         <Card>
-          <CardTitle>Theme: {theme}</CardTitle>
+          <CardTitle>Theme</CardTitle>
           <CardContent>
-            <button onClick={switcher}>Switch theme</button>
+            {/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_optgroup */}
+            <Select name="theme" onChange={switcher}>
+              {['light', 'dark', 'pink', 'yellow'].map(el => (
+                <option key={el} value={el} selected={el === theme}>
+                  {el}
+                </option>
+              ))}
+            </Select>
           </CardContent>
         </Card>
         <Card>
@@ -39,4 +45,4 @@ const Settings = ({ switchTheme }) => {
   );
 };
 
-export default connect(mapState, mapDispatch)(Settings);
+export default connect(null, mapDispatch)(Settings);
