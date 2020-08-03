@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.da886cbb.chunk.css",
-    "main.js": "/static/js/main.f4f96cad.chunk.js",
-    "main.js.map": "/static/js/main.f4f96cad.chunk.js.map",
+    "main.css": "/static/css/main.9b50f3bb.chunk.css",
+    "main.js": "/static/js/main.bb231fdc.chunk.js",
+    "main.js.map": "/static/js/main.bb231fdc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.bfe8f3ab.js",
     "runtime-main.js.map": "/static/js/runtime-main.bfe8f3ab.js.map",
-    "static/css/2.1fb4d830.chunk.css": "/static/css/2.1fb4d830.chunk.css",
-    "static/js/2.30b287ce.chunk.js": "/static/js/2.30b287ce.chunk.js",
-    "static/js/2.30b287ce.chunk.js.map": "/static/js/2.30b287ce.chunk.js.map",
+    "static/css/2.f985d1dc.chunk.css": "/static/css/2.f985d1dc.chunk.css",
+    "static/js/2.a9a6d524.chunk.js": "/static/js/2.a9a6d524.chunk.js",
+    "static/js/2.a9a6d524.chunk.js.map": "/static/js/2.a9a6d524.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3c72be9d4cf70507cd614e6ad8013b26.js": "/precache-manifest.3c72be9d4cf70507cd614e6ad8013b26.js",
+    "precache-manifest.0e37be711cf2258d820d881a728c6733.js": "/precache-manifest.0e37be711cf2258d820d881a728c6733.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.1fb4d830.chunk.css.map": "/static/css/2.1fb4d830.chunk.css.map",
-    "static/css/main.da886cbb.chunk.css.map": "/static/css/main.da886cbb.chunk.css.map",
-    "static/js/2.30b287ce.chunk.js.LICENSE.txt": "/static/js/2.30b287ce.chunk.js.LICENSE.txt",
+    "static/css/2.f985d1dc.chunk.css.map": "/static/css/2.f985d1dc.chunk.css.map",
+    "static/css/main.9b50f3bb.chunk.css.map": "/static/css/main.9b50f3bb.chunk.css.map",
+    "static/js/2.a9a6d524.chunk.js.LICENSE.txt": "/static/js/2.a9a6d524.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/ubuntu-latin-700italic.c02fdf85.woff2",
     "static/media/home_cinema.svg": "/static/media/home_cinema.afe57b51.svg",
     "static/media/operating_system.svg": "/static/media/operating_system.1ffb2d13.svg",
     "static/media/towing.svg": "/static/media/towing.1eec8c1f.svg",
-    "static/media/index.css": "/static/media/ubuntu-latin-700italic.c02fdf85.woff2",
     "static/media/weather_notification.svg": "/static/media/weather_notification.84f39abf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bfe8f3ab.js",
-    "static/css/2.1fb4d830.chunk.css",
-    "static/js/2.30b287ce.chunk.js",
-    "static/css/main.da886cbb.chunk.css",
-    "static/js/main.f4f96cad.chunk.js"
+    "static/css/2.f985d1dc.chunk.css",
+    "static/js/2.a9a6d524.chunk.js",
+    "static/css/main.9b50f3bb.chunk.css",
+    "static/js/main.bb231fdc.chunk.js"
   ]
 }

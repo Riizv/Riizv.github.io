@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAIA,KACE,QAAS,CACT,SACF","file":"main.9b50f3bb.chunk.css","sourcesContent":["* {\r\n  /* font-family: 'Ubuntu', Arial, Helvetica, sans-serif; */\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n"]}
