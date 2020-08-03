@@ -50,7 +50,7 @@ const Settings = ({ switchTheme, switchFont }) => {
               onChange={({ target }) => switchTheme(target.value)}
               value={theme}
             >
-              {['light', 'dark', 'pink', 'yellow'].map(el => (
+              {['light', 'dark', 'yellow'].map(el => (
                 <option key={el} value={el}>
                   {el}
                 </option>

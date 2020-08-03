@@ -45,24 +45,26 @@ export const themes = {
     },
     borderRadius: 1,
   },
-  pink: {
-    backgroundColor: '#1A1E22',
-    fontColor: '#E5E1DD',
+  yellow: {
+    backgroundColor: '#FDD32A',
+    fontColor: '#06070D',
+    second: '#FFFFFF30',
+
     card: {
-      backgroundColor: '#D8D2CC',
-      fontColor: '#1A1E22',
-      shadow: '',
+      backgroundColor: '#06070D',
+      fontColor: '#FFFFFF',
+      shadow: '0 0.5rem 2rem -1rem #191e2790',
     },
     nav: {
-      background: '#272D33',
-      fontColor: '#E5E1DD',
-      shadow: '',
+      background: '#FFFFFF',
+      fontColor: '#06070D',
+      shadow: '0 0 3rem -1rem #191e2770',
     },
     accent: {
       blue: '#2196f3',
       red: '#f44336',
       yellow: '#ffeb3b',
-      green: '#4caf50',
+      green: '#81c784',
     },
     borderRadius: 1,
   },
