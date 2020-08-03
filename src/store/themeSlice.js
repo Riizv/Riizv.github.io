@@ -1,11 +1,11 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-const themeSlice = createSlice({
+export const themeSlice = createSlice({
   name: 'theme',
-  initialState: { value: 'light' },
+  initialState: { theme: 'light' },
   reducers: {
     switchTheme: (state, action) => {
-      state.value = action.payload;
+      state.theme = action.payload;
     },
   },
 });
@@ -13,8 +13,4 @@ const themeSlice = createSlice({
 export const { actions, reducer } = themeSlice;
 export const { switchTheme } = actions;
 
-export const selectTheme = state => state.theme.value;
-
-export const store = configureStore({
-  reducer: { theme: themeSlice.reducer },
-});
+export const selectTheme = state => state.theme.theme;

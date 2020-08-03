@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import 'typeface-ubuntu';
+import 'typeface-montserrat';
+import 'typeface-roboto';
+import 'typeface-jetbrains-mono';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { store } from './store/themeSlice';
+import { store } from './store';
 
 ReactDOM.render(
   <React.StrictMode>

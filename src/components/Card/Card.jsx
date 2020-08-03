@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   border-radius: ${({ theme }) => theme.borderRadius}rem;
   background: ${({ theme }) => theme.card.backgroundColor};
   color: ${({ theme }) => theme.card.fontColor};

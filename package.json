@@ -20,6 +20,9 @@
     "react-spring": "^8.0.27",
     "react-use-gesture": "^7.0.15",
     "styled-components": "^5.1.1",
+    "typeface-jetbrains-mono": "^2.0.0",
+    "typeface-montserrat": "0.0.75",
+    "typeface-roboto": "0.0.75",
     "typeface-ubuntu": "0.0.65"
   },
   "scripts": {

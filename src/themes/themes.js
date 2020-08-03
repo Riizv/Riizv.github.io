@@ -2,6 +2,8 @@ export const themes = {
   light: {
     backgroundColor: '#F2F2F8',
     fontColor: '#374358',
+    second: '#d8dae0',
+
     card: {
       backgroundColor: '#FEFCFF',
       fontColor: '#374358',
@@ -23,6 +25,8 @@ export const themes = {
   dark: {
     backgroundColor: '#232533',
     fontColor: '#FDFDFE',
+    second: '#585c68',
+
     card: {
       backgroundColor: '#313645',
       fontColor: '#FDFDFE',

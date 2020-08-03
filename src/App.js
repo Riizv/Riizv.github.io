@@ -10,13 +10,15 @@ import Router from './router/Router';
 
 import { themes } from './themes/themes';
 import { selectTheme } from './store/themeSlice';
+import { selectFont } from './store/fontSlice';
 
 const App = () => {
   const theme = useSelector(selectTheme);
-
+  const font = useSelector(selectFont);
+  
   return (
     <ThemeProvider theme={themes[theme]}>
-      <GlobalStyle />
+      <GlobalStyle font={font} />
       <Layout>
         <Router />
       </Layout>
@@ -30,5 +32,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.fontColor};
+    * {
+      font-family: ${({ font }) => font};
+    }
   }
 `;
