@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,EACE,+CACF,CAEA,KACE,QAAS,CACT,SACF","file":"main.da886cbb.chunk.css","sourcesContent":["* {\r\n  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n"]}

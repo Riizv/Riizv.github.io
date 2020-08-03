@@ -1,1 +1,0 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,EACE,mDACF,CAEA,KACE,QAAS,CACT,SACF","file":"main.99ba057b.chunk.css","sourcesContent":["* {\r\n  font-family: 'Montserrat', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n"]}
