@@ -15,10 +15,10 @@ import { selectFont } from './store/fontSlice';
 const App = () => {
   const theme = useSelector(selectTheme);
   const font = useSelector(selectFont);
-  
+
   return (
     <ThemeProvider theme={themes[theme]}>
-      <GlobalStyle font={font} />
+      <GlobalStyle font={font}/>
       <Layout>
         <Router />
       </Layout>

@@ -8,7 +8,7 @@ import {
   AiOutlineRadiusUpright,
 } from 'react-icons/ai';
 
-import { CardIcon, Input as _Input } from '../../../components';
+import { CardIcon, Select as _Select } from '../../../components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const Fragment = styled.div`
   flex-direction: column;
 `;
 
-const Input = styled(_Input)`
+const Select = styled(_Select)`
   width: 3rem;
   margin-top: 1rem;
 `;
@@ -35,25 +35,49 @@ const BorderRadiusCard = () => {
         <CardIcon>
           <AiOutlineRadiusUpleft />
         </CardIcon>
-        <Input type="number" />
+        <Select name="theme">
+          {[0, 0.5, 1, 1.5].map(el => (
+            <option key={el} value={el}>
+              {el}
+            </option>
+          ))}
+        </Select>
       </Fragment>
       <Fragment>
         <CardIcon>
           <AiOutlineRadiusUpright />
         </CardIcon>
-        <Input type="number" />
+        <Select name="theme">
+          {[0, 0.5, 1, 1.5].map(el => (
+            <option key={el} value={el}>
+              {el}
+            </option>
+          ))}
+        </Select>
       </Fragment>
       <Fragment>
         <CardIcon>
           <AiOutlineRadiusBottomright />
         </CardIcon>
-        <Input type="number" />
+        <Select name="theme">
+          {[0, 0.5, 1, 1.5].map(el => (
+            <option key={el} value={el}>
+              {el}
+            </option>
+          ))}
+        </Select>
       </Fragment>
       <Fragment>
         <CardIcon>
           <AiOutlineRadiusBottomleft />
         </CardIcon>
-        <Input type="number" />
+        <Select name="theme">
+          {[0, 0.5, 1, 1.5].map(el => (
+            <option key={el} value={el}>
+              {el}
+            </option>
+          ))}
+        </Select>
       </Fragment>
     </Wrapper>
   );
