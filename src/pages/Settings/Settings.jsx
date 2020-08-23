@@ -2,7 +2,7 @@ import React from 'react';
 import { connect, useSelector } from 'react-redux';
 // import styled from 'styled-components';
 
-import { MdUpdate, MdBrightnessMedium } from 'react-icons/md';
+import { MdUpdate, MdBrightnessMedium, MdTranslate } from 'react-icons/md';
 import { FaFont } from 'react-icons/fa';
 import { AiOutlineRadiusSetting } from 'react-icons/ai';
 
@@ -24,12 +24,20 @@ import operating_system from '../../assets/operating_system.svg';
 
 import { selectTheme, switchTheme } from '../../store/themeSlice';
 import { selectFont, switchFont } from '../../store/fontSlice';
+import { selectLang, switchLang } from '../../store/langSlice';
 
-const mapDispatch = { switchTheme, switchFont };
+const mapDispatch = { switchTheme, switchFont, switchLang };
 
-const Settings = ({ switchTheme, switchFont }) => {
+const Settings = ({ switchTheme, switchFont, switchLang }) => {
   const theme = useSelector(selectTheme);
   const font = useSelector(selectFont);
+  const lang = useSelector(selectLang);
+
+  const displayOptions = el => (
+    <option key={el} value={el}>
+      {el}
+    </option>
+  );
 
   return (
     <div>
@@ -50,11 +58,7 @@ const Settings = ({ switchTheme, switchFont }) => {
               onChange={({ target }) => switchTheme(target.value)}
               value={theme}
             >
-              {['light', 'dark', 'pink', 'yellow'].map(el => (
-                <option key={el} value={el}>
-                  {el}
-                </option>
-              ))}
+              {['light', 'dark', 'pink', 'yellow'].map(displayOptions)}
             </Select>
           </CardContent>
         </Card>
@@ -72,16 +76,12 @@ const Settings = ({ switchTheme, switchFont }) => {
               value={font}
             >
               {[
-                'Montserrat',
                 'Ubuntu',
+                'Montserrat',
                 'Roboto',
                 'Jetbrains Mono',
                 'Arial',
-              ].map(el => (
-                <option key={el} value={el}>
-                  {el}
-                </option>
-              ))}
+              ].map(displayOptions)}
             </Select>
           </CardContent>
         </Card>
@@ -99,13 +99,32 @@ const Settings = ({ switchTheme, switchFont }) => {
         <Card>
           <CardHeader>
             <CardIcon>
+              <MdTranslate />
+            </CardIcon>
+            <CardTitle>Language</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Select
+              name="lang"
+              onChange={({ target }) => switchLang(target.value)}
+              value={lang}
+            >
+              {['en', 'pl', 'de'].map(displayOptions)}
+            </Select>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardIcon>
               <MdUpdate />
             </CardIcon>
             <CardTitle>Version</CardTitle>
           </CardHeader>
           <CardContent>
             <P>
-              <b>v0.3 Beta</b>
+              <b>
+                v0.4 <i>Beta</i>
+              </b>
             </P>
           </CardContent>
         </Card>
