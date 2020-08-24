@@ -127,7 +127,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
           <CardContent>
             <P>
               <b>
-                v0.4 <i>Beta</i>
+                v0.6 <i>Beta</i>
               </b>
             </P>
           </CardContent>

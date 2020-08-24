@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Cookies from 'js-cookie';
 
 export const langSlice = createSlice({
   name: 'lang',
-  initialState: { lang: 'en' },
+  initialState: { lang: Cookies.get('lang') },
   reducers: {
     switchLang: (state, action) => {
       state.lang = action.payload;
+      Cookies.set('lang', state.lang);
     },
   },
 });

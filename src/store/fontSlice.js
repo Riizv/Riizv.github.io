@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Cookies from 'js-cookie';
 
 export const fontSlice = createSlice({
   name: 'font',
-  initialState: { font: 'ubuntu' },
+  initialState: { font: Cookies.get('font') || 'ubuntu' },
   reducers: {
     switchFont: (state, action) => {
       state.font = action.payload;
+      Cookies.set('font', state.font);
     },
   },
 });

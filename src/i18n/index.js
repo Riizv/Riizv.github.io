@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+// import LanguageDetector from 'i18next-browser-languagedetector';
+import Cookies from 'js-cookie';
 
 import en from './locales/en.json';
 import pl from './locales/pl.json';
@@ -16,7 +17,7 @@ i18n
   // .use(LanguageDetector)
   .init({
     resources,
-    lng: 'en',
+    lng: Cookies.get('lang') || 'en',
     fallbackLng: 'en',
     debug: true,
 
