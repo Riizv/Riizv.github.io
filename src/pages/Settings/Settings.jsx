@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 // import styled from 'styled-components';
 
 import { MdUpdate, MdBrightnessMedium, MdTranslate } from 'react-icons/md';
@@ -33,6 +34,13 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
   const font = useSelector(selectFont);
   const lang = useSelector(selectLang);
 
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = ({ target: { value } }) => {
+    switchLang(value);
+    i18n.changeLanguage(value);
+  };
+
   const displayOptions = el => (
     <option key={el} value={el}>
       {el}
@@ -41,7 +49,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
 
   return (
     <div>
-      <Logo>Settings</Logo>
+      <Logo>{t('Settings')}</Logo>
       <Img src={operating_system} padding={30} maxHeight={300} />
       <Grid>
         <Card>
@@ -49,7 +57,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             <CardIcon>
               <MdBrightnessMedium />
             </CardIcon>
-            <CardTitle>Theme</CardTitle>
+            <CardTitle>{t('Theme')}</CardTitle>
           </CardHeader>
           <CardContent>
             {/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_optgroup */}
@@ -67,7 +75,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             <CardIcon>
               <FaFont />
             </CardIcon>
-            <CardTitle>Font</CardTitle>
+            <CardTitle>{t('Font')}</CardTitle>
           </CardHeader>
           <CardContent>
             <Select
@@ -90,7 +98,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             <CardIcon>
               <AiOutlineRadiusSetting />
             </CardIcon>
-            <CardTitle>Border radius</CardTitle>
+            <CardTitle>{t('Border radius')}</CardTitle>
           </CardHeader>
           <CardContent>
             <BorderRadiusCard />
@@ -101,14 +109,10 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             <CardIcon>
               <MdTranslate />
             </CardIcon>
-            <CardTitle>Language</CardTitle>
+            <CardTitle>{t('Language')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <Select
-              name="lang"
-              onChange={({ target }) => switchLang(target.value)}
-              value={lang}
-            >
+            <Select name="lang" onChange={changeLanguage} value={lang}>
               {['en', 'pl', 'de'].map(displayOptions)}
             </Select>
           </CardContent>
@@ -118,7 +122,7 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             <CardIcon>
               <MdUpdate />
             </CardIcon>
-            <CardTitle>Version</CardTitle>
+            <CardTitle>{t('Version')}</CardTitle>
           </CardHeader>
           <CardContent>
             <P>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { useTranslation } from 'react-i18next';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 
@@ -44,6 +45,8 @@ const Nav = styled.nav`
 const AnimatedNav = animated(Nav);
 
 const Navigation = () => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState({ width: true, height: false });
 
   const [{ height, width }, setSize] = useSpring(() => ({
@@ -105,10 +108,10 @@ const Navigation = () => {
             <NavigationLink to="/" name="Home">
               <FaHome />
             </NavigationLink>
-            <NavigationLink to="/weather-station" name="Weather Station">
+            <NavigationLink to="/weather-station" name={t('Weather Station')}>
               <FaCloudMoonRain />
             </NavigationLink>
-            <NavigationLink to="/settings" name="Settings">
+            <NavigationLink to="/settings" name={t('Settings')}>
               <IoMdSettings />
             </NavigationLink>
           </>

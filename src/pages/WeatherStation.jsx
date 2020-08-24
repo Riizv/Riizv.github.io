@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useObject } from 'react-firebase-hooks/database';
 import { MdError } from 'react-icons/md';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -41,9 +42,11 @@ const AnimationAiOutlineLoading3Quarters = styled(AiOutlineLoading3Quarters)`
 const WeatherStation = () => {
   const [value, loading, error] = useObject(base.ref('weather-station'));
 
+  const { t } = useTranslation();
+
   return (
     <div>
-      <Logo>Weather Station</Logo>
+      <Logo>{t('Weather Station')}</Logo>
       <Img src={weather_notification} padding={30} maxHeight={300} />
       <p>
         {error && (
@@ -61,7 +64,7 @@ const WeatherStation = () => {
               <CardIcon>
                 <RiTempColdLine />
               </CardIcon>
-              <CardTitle>Temperature</CardTitle>
+              <CardTitle>{t('Temperature')}</CardTitle>
             </CardHeader>
             <CardContent>
               <Progress value={value.val().temperature} />
@@ -72,7 +75,7 @@ const WeatherStation = () => {
               <CardIcon>
                 <IoIosWater />
               </CardIcon>
-              <CardTitle>Humidity</CardTitle>
+              <CardTitle>{t('Humidity')}</CardTitle>
             </CardHeader>
             <CardContent>
               <Progress value={value.val().humidity} />

@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
+
 import 'typeface-ubuntu';
 import 'typeface-montserrat';
 import 'typeface-roboto';
 import 'typeface-jetbrains-mono';
 
 import App from './App';
+import i18n from './i18n/';
 import * as serviceWorker from './serviceWorker';
 
 import { store } from './store';
@@ -14,7 +17,9 @@ import { store } from './store';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <I18nextProvider i18n={i18n}>
+        <App />
+      </I18nextProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

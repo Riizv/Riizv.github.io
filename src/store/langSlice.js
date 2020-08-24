@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const langSlice = createSlice({
   name: 'lang',
-  initialState: { lang: 'pl' },
+  initialState: { lang: 'en' },
   reducers: {
     switchLang: (state, action) => {
       state.lang = action.payload;
