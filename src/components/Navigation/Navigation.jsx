@@ -60,10 +60,14 @@ const Navigation = () => {
     if (swipeY === -1) {
       setSize({ height: 100 });
       setIsOpen({ ...isOpen, height: true });
+      document.body.style.overflow = 'hidden';
     }
     if (swipeY === 1) {
       setSize({ height: 0 });
       setIsOpen({ ...isOpen, height: false });
+      setTimeout(() => {
+        document.body.style.overflow = 'auto';
+      }, 200);
     }
     if (swipeX === -1) {
       setSize({ width: 100 });

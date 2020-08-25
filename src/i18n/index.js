@@ -19,7 +19,7 @@ i18n
     resources,
     lng: Cookies.get('lang') || 'en',
     fallbackLng: 'en',
-    debug: true,
+    debug: true, //!
 
     keySeparator: false, // we do not use keys in form messages.welcome
 
