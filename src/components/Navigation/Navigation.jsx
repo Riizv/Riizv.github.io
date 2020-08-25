@@ -19,7 +19,8 @@ const Link = styled(NavLink)`
 const NameLink = styled.span`
   display: block;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  line-height: 2rem;
 `;
 
 const Nav = styled.nav`
