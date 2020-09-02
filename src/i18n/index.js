@@ -5,11 +5,13 @@ import Cookies from 'js-cookie';
 
 import en from './locales/en.json';
 import pl from './locales/pl.json';
+import de from './locales/de.json';
 // the translations
 // (tip move them in a JSON file and import them)
 const resources = {
   en: { translation: en },
   pl: { translation: pl },
+  de: { translation: de },
 };
 
 i18n

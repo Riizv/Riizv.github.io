@@ -14,7 +14,7 @@ import {
 } from '../components';
 import home_cinema from '../assets/home_cinema.svg';
 import { Grid } from '../containers';
-import { FaHome, FaCloudMoonRain } from 'react-icons/fa';
+import { FaCloudMoonRain } from 'react-icons/fa';
 
 const Home = () => {
   const { t } = useTranslation();
