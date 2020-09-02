@@ -11,7 +11,7 @@ import { FaHome, FaCloudMoonRain } from 'react-icons/fa';
 import { IoMdSettings, IoMdMenu } from 'react-icons/io';
 
 const Link = styled(NavLink)`
-  flex: 1; 
+  flex: 1;
   text-align: center;
   margin-top: 0.8rem;
 `;
@@ -41,6 +41,13 @@ const Nav = styled.nav`
   box-sizing: border-box;
   overflow: hidden;
   box-shadow: ${({ theme }) => theme.nav.shadow};
+
+  @supports (
+    (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))
+  ) {
+    background: ${({ theme }) => theme.nav.background}80;
+    backdrop-filter: blur(1rem);
+  }
 `;
 
 const AnimatedNav = animated(Nav);
