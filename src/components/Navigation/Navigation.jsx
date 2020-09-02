@@ -11,7 +11,7 @@ import { FaHome, FaCloudMoonRain } from 'react-icons/fa';
 import { IoMdSettings, IoMdMenu } from 'react-icons/io';
 
 const Link = styled(NavLink)`
-  flex: 1;
+  flex: 1; 
   text-align: center;
   margin-top: 0.8rem;
 `;
