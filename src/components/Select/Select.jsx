@@ -17,6 +17,10 @@ const StyledSelect = styled.select`
   &:focus {
     outline: none;
   }
+  > * {
+    background: ${({ theme }) => theme.card.backgroundColor};
+    color: ${({ theme }) => theme.card.fontColor};
+  }
 `;
 
 const Select = props => {

@@ -124,10 +124,10 @@ const Settings = ({ switchTheme, switchFont, switchLang }) => {
             </CardIcon>
             <CardTitle>{t('Version')}</CardTitle>
           </CardHeader>
-          <CardContent onClick={() => alert('Easter egg!')}>
+          <CardContent onClick={() => alert('Easter egg! Dużo klikasz')}>
             <P>
               <b>
-                v0.6 <i>Beta</i>
+                v0.6.1 <i>Beta</i>
               </b>
             </P>
           </CardContent>
