@@ -36,6 +36,7 @@ const Nav = styled.nav`
   position: fixed;
   bottom: 0;
   right: 0;
+  left: 0 ;
   margin: 1rem;
   border-radius: ${({ theme }) => theme.borderRadius}rem;
   box-sizing: border-box;
